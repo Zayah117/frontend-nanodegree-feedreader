@@ -55,8 +55,24 @@ $(function() {
 
     /* TODO: Write a new test suite named "The menu" */
     describe('The menu', function() {
+        var spyEvent;
+
         it('is hidden by default', function() {
             expect($('body').hasClass('menu-hidden')).toEqual(true);
+        });
+
+        it('turns visibility when clicked and hidden', function() {
+            if ($('body').hasClass('menu-hidden')) {
+                $('.menu-icon-link').trigger('click');
+                expect($('body').hasClass('menu-hidden')).toEqual(false);
+            }
+        });
+
+        it('hides when clicked and visibile', function() {
+            if ($('body').hasClass('menu-hidden') === false) {
+                $('.menu-icon-link').trigger('click');
+                expect($('body').hasClass('menu-hidden')).toEqual(true);
+            }
         });
     });
 
