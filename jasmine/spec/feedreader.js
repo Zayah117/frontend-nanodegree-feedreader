@@ -61,14 +61,14 @@ $(function() {
             expect($('body').hasClass('menu-hidden')).toEqual(true);
         });
 
-        it('turns visibility when clicked and hidden', function() {
+        it('changes visibility when clicked', function() {
+            // when hidden and clicked
             if ($('body').hasClass('menu-hidden')) {
                 $('.menu-icon-link').trigger('click');
                 expect($('body').hasClass('menu-hidden')).toEqual(false);
             }
-        });
 
-        it('hides when clicked and visibile', function() {
+            // when visible and clicked
             if ($('body').hasClass('menu-hidden') === false) {
                 $('.menu-icon-link').trigger('click');
                 expect($('body').hasClass('menu-hidden')).toEqual(true);
