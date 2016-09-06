@@ -68,16 +68,23 @@ $(function() {
 
     /* Tests to make sure new content is loaded when loadFeed() is called*/
     describe('New Feed Selection', function() {
-        var oldFeed = $('.feed').text();
+        var oldFeed;
+        var newFeed;
 
         beforeEach(function(done) {
-            loadFeed(1, function() {
-                done();
+            loadFeed(0, function() {
+                oldFeed = $('.feed').text();
+                loadFeed(1, function() {
+                    newFeed = $('.feed').text();
+                    done();
+                });
             });
         });
 
         it('should load a new feed when content changes', function(done) {
-            expect(oldFeed === $('.feed').text()).toBe(false);
+            console.log(oldFeed);
+            console.log(newFeed);
+            expect(oldFeed === newFeed).toBe(false);
             done();
         });
     });
