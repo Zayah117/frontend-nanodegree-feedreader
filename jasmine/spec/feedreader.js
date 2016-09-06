@@ -97,7 +97,7 @@ $(function() {
         });
 
         it('contians entries', function(done) {
-            expect($('.feed').children().length).not.toBe(0);
+            expect($('.feed').children('.entry-link').length).not.toBe(0);
             done();
         });
     });
