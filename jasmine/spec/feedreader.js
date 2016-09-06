@@ -36,8 +36,6 @@ $(function() {
     /* Tests to make sure the menu is hidden by default,
     and changes visibility when clicked */
     describe('The menu', function() {
-        var spyEvent;
-
         it('is hidden by default', function() {
             expect($('body').hasClass('menu-hidden')).toEqual(true);
         });
@@ -63,9 +61,8 @@ $(function() {
             loadFeed(0, done);
         });
 
-        it('contians entries', function(done) {
-            expect($('.feed').children('.entry-link').length).not.toBe(0);
-            done();
+        it('contians entries', function() {
+            expect($('.feed .entry').length).not.toBe(0);
         });
     });
 
