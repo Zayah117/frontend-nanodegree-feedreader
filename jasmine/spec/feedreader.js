@@ -60,9 +60,7 @@ $(function() {
     /* Tests to make sure there are feed links in the initial results */
     describe('Initial Entries', function() {
         beforeEach(function(done) {
-            loadFeed(0, function() {
-                done();
-            });
+            loadFeed(0, done);
         });
 
         it('contians entries', function(done) {
